@@ -21,7 +21,7 @@ interactive map dashboard.
 - Source: [Indian Crimes Dataset - Kaggle](https://www.kaggle.com/datasets/sudhanvahg/indian-crimes-dataset)
 - Records: 40,160 crime incidents
 - Cities: 29 major Indian cities
-- Period: 2020 - 2024
+- Period: 2020-2024
 - Features: Crime type, date, time, city, victim profile, weapon used, case status
 ---
 ## Tech Stack
