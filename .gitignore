@@ -1,0 +1,10 @@
+venv/
+__pycache__/
+*.pyc
+outputs/data_quality_report.csv
+.env
+.ipynb_checkpoints/
+notebooks/
+outputs/charts/hotspot_analysis.png
+outputs/maps/interactive_crime_map.html
+src/hotspot_analy.py
