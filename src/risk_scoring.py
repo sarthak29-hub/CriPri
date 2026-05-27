@@ -207,7 +207,6 @@ def generate_risk_chart(risk):
     ax.invert_yaxis()
     ax.grid(axis="x", linestyle="--", alpha=0.4)
 
-    # Legend
     from matplotlib.patches import Patch
     legend_elements = [
         Patch(facecolor="#d32f2f", label="Critical (75-100)"),
