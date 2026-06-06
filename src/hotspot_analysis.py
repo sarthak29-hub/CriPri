@@ -43,7 +43,7 @@ SEVERITY_WEIGHTS = {
 def load_clean_data():
     df = pd.read_csv(DATA_PATH, parse_dates=["Date_of_Occurrence"])
     df["Severity"] = df["Crime_Description"].map(SEVERITY_WEIGHTS).fillna(1)
-    print(f"Data loaded: {df.shape[0]} rows , Severity scores assigned")
+    print(f"Data loaded: {df.shape[0]} rows | Severity scores assigned")
     return df
 
 def calculate_crime_density(df):
@@ -64,7 +64,7 @@ def calculate_crime_density(df):
     print(f"{'City':<20} {'Count':>8} {'Density%':>10} {'Wtd Density':>13} {'Avg Severity':>14}")
     for _, row in density.iterrows():
         print(
-            f"{row['City']:<20}"
+            f"   {row['City']:<20}"
             f"{row['Crime_Count']:>8}"
             f"{row['Crime_Density']:>10}"
             f"{row['Weighted_Density']:>13}"
@@ -79,7 +79,7 @@ def run_dbscan_clustering(city_summary):
     epsilon    = 300 / 6371
     db = DBSCAN(eps=epsilon,min_samples=2,algorithm="ball_tree",metric="haversine").fit(coords_rad)
 
-    city_summary = city_summary.copy()
+    city_summary         = city_summary.copy()
     city_summary["Cluster"] = db.labels_
 
     n_clusters = len(set(db.labels_)) - (1 if -1 in db.labels_ else 0)
@@ -112,10 +112,11 @@ def run_dbscan_clustering(city_summary):
 
 def identify_top_risky_zones(df, city_summary):
     top10 = city_summary.head(10)
-    print("\nTop 10 Risky Zones:")
-    print(f"{'Rank':<6} {'City':<20} {'Crimes':>8} {'Severity Score':>16}")
+    print("\n   Top 10 Risky Zones:")
+    print(f"   {'Rank':<6} {'City':<20} {'Crimes':>8} {'Severity Score':>16}")
+    print("   " + "-" * 55)
     for rank, (_, row) in enumerate(top10.iterrows(), 1):
-        print(f"{rank:<6} {row['City']:<20} {row['Crime_Count']:>8} {row['Total_Severity']:>16}")
+        print(f"   {rank:<6} {row['City']:<20} {row['Crime_Count']:>8} {row['Total_Severity']:>16}")
 
     dominant = df.groupby(["City", "Crime_Description"]).size().reset_index(name="Count")
     dominant = dominant.sort_values("Count", ascending=False)
