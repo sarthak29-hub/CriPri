@@ -4,8 +4,6 @@
 > identifies hotspots, calculates area-wise risk scores, predicts crime
 > likelihood, and visualizes results on an interactive GIS-based dashboard.
 
----
-
 ## Project Overview
 
 CriPri (Crime Prediction) is an internship project demonstrating real-world
@@ -16,8 +14,6 @@ The system ingests raw crime CSV data, cleans and enriches it, identifies
 geographic crime clusters, scores areas by risk level, builds ML prediction
 models, and presents findings through an interactive Streamlit dashboard.
 
----
-
 ## Project Status
 
 - Phase 1 - Data Processing & Feature Engineering   : Complete
@@ -25,8 +21,6 @@ models, and presents findings through an interactive Streamlit dashboard.
 - Phase 3 - Risk Scoring Engine (0-100 Index)       : Complete
 - Phase 4 - ML Prediction Model                     : Complete
 - Phase 5 - Streamlit Interactive Dashboard         : Complete
-
----
 
 ## Dataset
 
@@ -36,8 +30,6 @@ models, and presents findings through an interactive Streamlit dashboard.
 - Period: 2020 to 2024
 - Features: Crime type, date, time, city, victim profile, weapon used, police deployed, case closure status
 
----
-
 ## Tech Stack
 
 - Core: Python 3.13, Pandas, NumPy
@@ -46,8 +38,6 @@ models, and presents findings through an interactive Streamlit dashboard.
 - Visualization: Matplotlib, Seaborn
 - Dashboard: Streamlit
 - Clustering: DBSCAN (Scikit-learn)
-
----
 
 ## Project Structure
 
@@ -87,8 +77,6 @@ CriPri/
 └── README.md
 ```
 
----
-
 ## Setup Instructions
 
 1. Clone the repository
@@ -113,39 +101,37 @@ pip install -r requirements.txt
 
 4. Download the dataset from Kaggle and place inside data/ folder as indian_crime_data.csv
 
-5. Run Phase 1 - Data Processing
+5. Run Data Processing
 
 ```bash
 python src/data_processing.py
 ```
 
-6. Run Phase 2 - Hotspot Analysis
+6. Run Hotspot Analysis
 
 ```bash
 python src/hotspot_analysis.py
 ```
 
-7. Run Phase 3 - Risk Scoring
+7. Run Risk Scoring
 
 ```bash
 python src/risk_scoring.py
 ```
 
-8. Run Phase 4 - ML Model
+8. Run ML Model
 
 ```bash
 python src/ml_model.py
 ```
 
-9. Run Phase 5 - Dashboard
+9. Run Dashboard
 
 ```bash
 python -m streamlit run src/dashboard.py
 ```
 
 10. Open browser at http://localhost:8501
-
----
 
 ## Data Processing
 
@@ -158,8 +144,6 @@ python -m streamlit run src/dashboard.py
 - Calculated case closure rate per city
 - Saved data quality report
 
----
-
 ## Hotspot Analysis
 
 - Assigned severity weights to 21 crime types on a 1 to 10 scale
@@ -170,8 +154,6 @@ python -m streamlit run src/dashboard.py
 - Built 7 analytical charts
 - Identified dominant crime type per city
 
----
-
 ## Risk Scoring Engine
 
 - Designed formula combining Frequency (0.4), Severity (0.4), Recency (0.2)
@@ -181,8 +163,6 @@ python -m streamlit run src/dashboard.py
 - Generated color coded interactive risk map
 - Exported scores for use in Phase 4 ML model
 
----
-
 ## ML Prediction Model
 
 - Defined binary classification target: Violent vs Non-Violent crime
@@ -191,8 +171,6 @@ python -m streamlit run src/dashboard.py
 - Trained Random Forest and XGBoost classifiers
 - Evaluated on Accuracy, Precision, Recall, F1, ROC-AUC
 - Random Forest selected as best model based on Recall performance
-
----
 
 ## Streamlit Dashboard
 
@@ -204,8 +182,6 @@ python -m streamlit run src/dashboard.py
 - Hour vs Day heatmap showing crime intensity grid
 - CSV download of filtered data
 
----
-
 ## Key Findings
 
 - Delhi: 100/100 Risk Index, 13.4% of all India crimes
@@ -216,8 +192,6 @@ python -m streamlit run src/dashboard.py
 - Police deployment flat at 10 officers regardless of crime severity
 - Random Forest outperformed XGBoost on Recall: 0.5026 vs 0.1092
 
----
-
 ## Geographic Crime Zones - DBSCAN
 
 - Zone 0 North India: Delhi, Jaipur, Lucknow, Kanpur, Ludhiana, Agra, Ghaziabad, Patna, Meerut, Faridabad, Varanasi: 13,475 crimes
@@ -226,20 +200,16 @@ python -m streamlit run src/dashboard.py
 - Zone 3 Central India: Nagpur, Indore, Bhopal: 2,442 crimes
 - Isolated: Hyderabad, Kolkata, Visakhapatnam, Srinagar: 6,498 crimes
 
----
-
 ## ML Model Results
 
-- Metric / Random Forest / XGBoost
-- Accuracy: 0.5063 / 0.5576
-- Precision: 0.4346 / 0.4367
-- Recall: 0.5026 / 0.1092
-- F1 Score: 0.4661 / 0.1747
-- ROC-AUC: 0.5052 / 0.5048
+- Metric  Random Forest XGBoost
+- Accuracy:  0.5063     0.5576
+- Precision: 0.4346     0.4367
+- Recall:    0.5026     0.1092
+- F1 Score:  0.4661     0.1747
+- ROC-AUC:   0.5052     0.5048
 
 Note: Scores near 0.50 confirm no data leakage. Dataset is synthetically generated so no real patterns exist for models to learn. On real crime data scores would be 65 to 80 percent.
-
----
 
 ## Planned Improvements
 
@@ -249,11 +219,9 @@ Note: Scores near 0.50 confirm no data leakage. Dataset is synthetically generat
 - Next-hour crime probability prediction
 - Replace synthetic dataset with real crime records
 
----
-
 ## Author
 
 Sarthak Aggarwal
-Internship Project
-Built with Python, Pandas, Scikit-learn, XGBoost, Folium, Geopy, Streamlit
-GitHub: https://github.com/sarthak29-hub/CriPri
+-Internship Project
+-Built with Python, Pandas, Scikit-learn, XGBoost, Folium, Geopy, Streamlit
+-GitHub: https://github.com/sarthak29-hub/CriPri
