@@ -221,7 +221,7 @@ Note: Scores near 0.50 confirm no data leakage. Dataset is synthetically generat
 
 ## Author
 
-Sarthak Aggarwal
--Internship Project
--Built with Python, Pandas, Scikit-learn, XGBoost, Folium, Geopy, Streamlit
--GitHub: https://github.com/sarthak29-hub/CriPri
+- Sarthak Aggarwal
+- Internship Project
+- Built with Python, Pandas, Scikit-learn, XGBoost, Folium, Geopy, Streamlit
+- GitHub: https://github.com/sarthak29-hub/CriPri
